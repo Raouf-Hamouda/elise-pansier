@@ -116,10 +116,10 @@
     reset();
     const t = setInterval(() => {
       if (document.hidden) return;
-      if (pile.length === 0) { reset(); return; }   // all gone: the pile is laid out again
       const top = pile.shift(); top.classList.add('is-leaving');
       setTimeout(() => top.classList.add('is-gone'), 700);
       order();
+      if (pile.length === 0) setTimeout(() => { reset(); el.classList.add('is-fresh'); setTimeout(() => el.classList.remove('is-fresh'), 50); }, 450);   // last one leaving: the pile is laid out again underneath, no empty hole
     }, 2600);
     return { destroy: () => clearInterval(t) };
   });

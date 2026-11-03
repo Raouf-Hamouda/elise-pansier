@@ -155,6 +155,7 @@ html.menu-open .nav{color:var(--paper)}
   transition:transform .7s cubic-bezier(.2,.9,.2,1),opacity .5s}
 .deck img.is-leaving{transform:translate(-30%,14%) rotate(-12deg);opacity:0;z-index:20}
 .deck img.is-gone{display:none}
+.deck.is-fresh img{opacity:0;transform:translate(0,12px) scale(.98)}
 .about .head{grid-area:head}
 .about .head h2{font-size:clamp(1.8rem,3.2vw,3rem);rotate:-1.5deg;transform-origin:left bottom}.about .contact{grid-area:contact}
 .about .head{margin-bottom:0}
