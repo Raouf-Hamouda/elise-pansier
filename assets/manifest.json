@@ -1,0 +1,574 @@
+{
+ "strips": {
+  "drunker": {
+   "title": "DRUNKER",
+   "tiles": [
+    {
+     "src": "assets/strips/drunker/000.webp",
+     "w": 1200,
+     "h": 1800
+    },
+    {
+     "src": "assets/strips/drunker/001.webp",
+     "w": 1200,
+     "h": 1800
+    },
+    {
+     "src": "assets/strips/drunker/002.webp",
+     "w": 1200,
+     "h": 1800
+    },
+    {
+     "src": "assets/strips/drunker/003.webp",
+     "w": 1200,
+     "h": 1800
+    },
+    {
+     "src": "assets/strips/drunker/004.webp",
+     "w": 1200,
+     "h": 1800
+    },
+    {
+     "src": "assets/strips/drunker/005.webp",
+     "w": 1200,
+     "h": 1800
+    },
+    {
+     "src": "assets/strips/drunker/006.webp",
+     "w": 1200,
+     "h": 1800
+    },
+    {
+     "src": "assets/strips/drunker/007.webp",
+     "w": 1200,
+     "h": 1800
+    },
+    {
+     "src": "assets/strips/drunker/008.webp",
+     "w": 1200,
+     "h": 1800
+    },
+    {
+     "src": "assets/strips/drunker/009.webp",
+     "w": 1200,
+     "h": 1800
+    },
+    {
+     "src": "assets/strips/drunker/010.webp",
+     "w": 1200,
+     "h": 1800
+    },
+    {
+     "src": "assets/strips/drunker/011.webp",
+     "w": 1200,
+     "h": 1800
+    },
+    {
+     "src": "assets/strips/drunker/012.webp",
+     "w": 1200,
+     "h": 1800
+    },
+    {
+     "src": "assets/strips/drunker/013.webp",
+     "w": 1200,
+     "h": 1800
+    },
+    {
+     "src": "assets/strips/drunker/014.webp",
+     "w": 1200,
+     "h": 1800
+    },
+    {
+     "src": "assets/strips/drunker/015.webp",
+     "w": 1200,
+     "h": 1800
+    },
+    {
+     "src": "assets/strips/drunker/016.webp",
+     "w": 1200,
+     "h": 1800
+    },
+    {
+     "src": "assets/strips/drunker/017.webp",
+     "w": 1200,
+     "h": 1800
+    },
+    {
+     "src": "assets/strips/drunker/018.webp",
+     "w": 1200,
+     "h": 1800
+    },
+    {
+     "src": "assets/strips/drunker/019.webp",
+     "w": 1200,
+     "h": 1800
+    },
+    {
+     "src": "assets/strips/drunker/020.webp",
+     "w": 1200,
+     "h": 1800
+    },
+    {
+     "src": "assets/strips/drunker/021.webp",
+     "w": 1200,
+     "h": 1800
+    },
+    {
+     "src": "assets/strips/drunker/022.webp",
+     "w": 1200,
+     "h": 1800
+    },
+    {
+     "src": "assets/strips/drunker/023.webp",
+     "w": 1200,
+     "h": 1281
+    },
+    {
+     "src": "assets/strips/drunker/024.webp",
+     "w": 1200,
+     "h": 1800
+    },
+    {
+     "src": "assets/strips/drunker/025.webp",
+     "w": 1200,
+     "h": 1800
+    },
+    {
+     "src": "assets/strips/drunker/026.webp",
+     "w": 1200,
+     "h": 1800
+    },
+    {
+     "src": "assets/strips/drunker/027.webp",
+     "w": 1200,
+     "h": 1800
+    },
+    {
+     "src": "assets/strips/drunker/028.webp",
+     "w": 1200,
+     "h": 1800
+    },
+    {
+     "src": "assets/strips/drunker/029.webp",
+     "w": 1200,
+     "h": 1800
+    },
+    {
+     "src": "assets/strips/drunker/030.webp",
+     "w": 1200,
+     "h": 1800
+    },
+    {
+     "src": "assets/strips/drunker/031.webp",
+     "w": 1200,
+     "h": 1800
+    },
+    {
+     "src": "assets/strips/drunker/032.webp",
+     "w": 1200,
+     "h": 1800
+    },
+    {
+     "src": "assets/strips/drunker/033.webp",
+     "w": 1200,
+     "h": 1800
+    },
+    {
+     "src": "assets/strips/drunker/034.webp",
+     "w": 1200,
+     "h": 1800
+    },
+    {
+     "src": "assets/strips/drunker/035.webp",
+     "w": 1200,
+     "h": 1800
+    },
+    {
+     "src": "assets/strips/drunker/036.webp",
+     "w": 1200,
+     "h": 1800
+    },
+    {
+     "src": "assets/strips/drunker/037.webp",
+     "w": 1200,
+     "h": 1800
+    },
+    {
+     "src": "assets/strips/drunker/038.webp",
+     "w": 1200,
+     "h": 1800
+    },
+    {
+     "src": "assets/strips/drunker/039.webp",
+     "w": 1200,
+     "h": 1800
+    },
+    {
+     "src": "assets/strips/drunker/040.webp",
+     "w": 1200,
+     "h": 1800
+    },
+    {
+     "src": "assets/strips/drunker/041.webp",
+     "w": 1200,
+     "h": 1800
+    },
+    {
+     "src": "assets/strips/drunker/042.webp",
+     "w": 1200,
+     "h": 1247
+    }
+   ],
+   "height": 76328,
+   "bg": "#ffffff",
+   "accent": "#403059",
+   "dark": true
+  },
+  "dieu-s-en-tappe": {
+   "title": "Dieu s'en tappe !",
+   "tiles": [
+    {
+     "src": "assets/strips/dieu-s-en-tappe/000.webp",
+     "w": 1200,
+     "h": 1800
+    },
+    {
+     "src": "assets/strips/dieu-s-en-tappe/001.webp",
+     "w": 1200,
+     "h": 1800
+    },
+    {
+     "src": "assets/strips/dieu-s-en-tappe/002.webp",
+     "w": 1200,
+     "h": 1800
+    },
+    {
+     "src": "assets/strips/dieu-s-en-tappe/003.webp",
+     "w": 1200,
+     "h": 1800
+    },
+    {
+     "src": "assets/strips/dieu-s-en-tappe/004.webp",
+     "w": 1200,
+     "h": 1800
+    },
+    {
+     "src": "assets/strips/dieu-s-en-tappe/005.webp",
+     "w": 1200,
+     "h": 1800
+    },
+    {
+     "src": "assets/strips/dieu-s-en-tappe/006.webp",
+     "w": 1200,
+     "h": 1800
+    },
+    {
+     "src": "assets/strips/dieu-s-en-tappe/007.webp",
+     "w": 1200,
+     "h": 1800
+    },
+    {
+     "src": "assets/strips/dieu-s-en-tappe/008.webp",
+     "w": 1200,
+     "h": 1800
+    },
+    {
+     "src": "assets/strips/dieu-s-en-tappe/009.webp",
+     "w": 1200,
+     "h": 1800
+    },
+    {
+     "src": "assets/strips/dieu-s-en-tappe/010.webp",
+     "w": 1200,
+     "h": 1800
+    },
+    {
+     "src": "assets/strips/dieu-s-en-tappe/011.webp",
+     "w": 1200,
+     "h": 1800
+    }
+   ],
+   "height": 21600,
+   "bg": "#ffffff",
+   "accent": "#79a6d6",
+   "dark": false
+  },
+  "hymen": {
+   "title": "hymen",
+   "tiles": [
+    {
+     "src": "assets/strips/hymen/000.webp",
+     "w": 1200,
+     "h": 1800
+    },
+    {
+     "src": "assets/strips/hymen/001.webp",
+     "w": 1200,
+     "h": 1800
+    },
+    {
+     "src": "assets/strips/hymen/002.webp",
+     "w": 1200,
+     "h": 1800
+    },
+    {
+     "src": "assets/strips/hymen/003.webp",
+     "w": 1200,
+     "h": 1800
+    },
+    {
+     "src": "assets/strips/hymen/004.webp",
+     "w": 1200,
+     "h": 1800
+    },
+    {
+     "src": "assets/strips/hymen/005.webp",
+     "w": 1200,
+     "h": 1800
+    },
+    {
+     "src": "assets/strips/hymen/006.webp",
+     "w": 1200,
+     "h": 1800
+    },
+    {
+     "src": "assets/strips/hymen/007.webp",
+     "w": 1200,
+     "h": 1800
+    },
+    {
+     "src": "assets/strips/hymen/008.webp",
+     "w": 1200,
+     "h": 1800
+    },
+    {
+     "src": "assets/strips/hymen/009.webp",
+     "w": 1200,
+     "h": 1800
+    }
+   ],
+   "height": 18000,
+   "bg": "#ffffff",
+   "accent": "#ed1f20",
+   "dark": true
+  },
+  "poisson-pas-ne": {
+   "title": "poisson pas-né",
+   "tiles": [
+    {
+     "src": "assets/strips/poisson-pas-ne/000.webp",
+     "w": 1200,
+     "h": 1800
+    },
+    {
+     "src": "assets/strips/poisson-pas-ne/001.webp",
+     "w": 1200,
+     "h": 1800
+    },
+    {
+     "src": "assets/strips/poisson-pas-ne/002.webp",
+     "w": 1200,
+     "h": 1800
+    },
+    {
+     "src": "assets/strips/poisson-pas-ne/003.webp",
+     "w": 1200,
+     "h": 1800
+    },
+    {
+     "src": "assets/strips/poisson-pas-ne/004.webp",
+     "w": 1200,
+     "h": 1800
+    },
+    {
+     "src": "assets/strips/poisson-pas-ne/005.webp",
+     "w": 1200,
+     "h": 1800
+    },
+    {
+     "src": "assets/strips/poisson-pas-ne/006.webp",
+     "w": 1200,
+     "h": 1800
+    },
+    {
+     "src": "assets/strips/poisson-pas-ne/007.webp",
+     "w": 1200,
+     "h": 1800
+    },
+    {
+     "src": "assets/strips/poisson-pas-ne/008.webp",
+     "w": 1200,
+     "h": 1800
+    },
+    {
+     "src": "assets/strips/poisson-pas-ne/009.webp",
+     "w": 1200,
+     "h": 1800
+    },
+    {
+     "src": "assets/strips/poisson-pas-ne/010.webp",
+     "w": 1200,
+     "h": 1800
+    },
+    {
+     "src": "assets/strips/poisson-pas-ne/011.webp",
+     "w": 1200,
+     "h": 1800
+    },
+    {
+     "src": "assets/strips/poisson-pas-ne/012.webp",
+     "w": 1200,
+     "h": 1301
+    }
+   ],
+   "height": 22901,
+   "bg": "#ffffff",
+   "accent": "#4681c3",
+   "dark": true
+  },
+  "invasion": {
+   "title": "invasion",
+   "tiles": [
+    {
+     "src": "assets/strips/invasion/000.webp",
+     "w": 1200,
+     "h": 1500
+    },
+    {
+     "src": "assets/strips/invasion/001.webp",
+     "w": 1200,
+     "h": 1500
+    },
+    {
+     "src": "assets/strips/invasion/002.webp",
+     "w": 1200,
+     "h": 1500
+    },
+    {
+     "src": "assets/strips/invasion/003.webp",
+     "w": 1200,
+     "h": 1500
+    },
+    {
+     "src": "assets/strips/invasion/004.webp",
+     "w": 1200,
+     "h": 1500
+    },
+    {
+     "src": "assets/strips/invasion/005.webp",
+     "w": 1200,
+     "h": 1500
+    },
+    {
+     "src": "assets/strips/invasion/006.webp",
+     "w": 1200,
+     "h": 1500
+    },
+    {
+     "src": "assets/strips/invasion/007.webp",
+     "w": 1200,
+     "h": 1500
+    },
+    {
+     "src": "assets/strips/invasion/008.webp",
+     "w": 1200,
+     "h": 1500
+    },
+    {
+     "src": "assets/strips/invasion/009.webp",
+     "w": 1200,
+     "h": 1500
+    },
+    {
+     "src": "assets/strips/invasion/010.webp",
+     "w": 1200,
+     "h": 1500
+    }
+   ],
+   "height": 16500,
+   "bg": "#fefdf6",
+   "accent": "#f1c57c",
+   "dark": false,
+   "pages": true
+  }
+ },
+ "images": {
+  "about-00": {
+   "title": "about 0",
+   "w": 1440,
+   "h": 1056,
+   "src": "assets/img/about-00-1200.webp",
+   "src2x": "assets/img/about-00-2400.webp"
+  },
+  "about-01": {
+   "title": "about 1",
+   "w": 1439,
+   "h": 1056,
+   "src": "assets/img/about-01-1200.webp",
+   "src2x": "assets/img/about-01-2400.webp"
+  },
+  "about-02": {
+   "title": "about 2",
+   "w": 1440,
+   "h": 1056,
+   "src": "assets/img/about-02-1200.webp",
+   "src2x": "assets/img/about-02-2400.webp"
+  },
+  "about-03": {
+   "title": "about 3",
+   "w": 1438,
+   "h": 1056,
+   "src": "assets/img/about-03-1200.webp",
+   "src2x": "assets/img/about-03-2400.webp"
+  },
+  "bunker-irl": {
+   "title": "Bunker IRL",
+   "w": 2480,
+   "h": 1215,
+   "src": "assets/img/bunker-irl-1200.webp",
+   "src2x": "assets/img/bunker-irl-2400.webp"
+  },
+  "dr-m": {
+   "title": "DR.M",
+   "w": 3543,
+   "h": 2953,
+   "src": "assets/img/dr-m-1200.webp",
+   "src2x": "assets/img/dr-m-2400.webp"
+  },
+  "pansier-elise-scan-sujet-invasion": {
+   "title": "PANSIER Elise_scan_sujet invasion",
+   "w": 6072,
+   "h": 8598,
+   "src": "assets/img/pansier-elise-scan-sujet-invasion-1200.webp",
+   "src2x": "assets/img/pansier-elise-scan-sujet-invasion-2400.webp"
+  },
+  "plan-de-travail-6": {
+   "title": "Plan_de_travail_6",
+   "w": 2480,
+   "h": 1181,
+   "src": "assets/img/plan-de-travail-6-1200.webp",
+   "src2x": "assets/img/plan-de-travail-6-2400.webp"
+  },
+  "plan-de-travail-7": {
+   "title": "Plan_de_travail_7",
+   "w": 2480,
+   "h": 1215,
+   "src": "assets/img/plan-de-travail-7-1200.webp",
+   "src2x": "assets/img/plan-de-travail-7-2400.webp"
+  },
+  "saltimbanques": {
+   "title": "Saltimbanques",
+   "w": 3543,
+   "h": 2953,
+   "src": "assets/img/saltimbanques-1200.webp",
+   "src2x": "assets/img/saltimbanques-2400.webp"
+  },
+  "sans-titre-19-septembre-2026-00-10": {
+   "title": "Sans titre - 19 septembre 2026 00.10",
+   "w": 3543,
+   "h": 2362,
+   "src": "assets/img/sans-titre-19-septembre-2026-00-10-1200.webp",
+   "src2x": "assets/img/sans-titre-19-septembre-2026-00-10-2400.webp"
+  }
+ }
+}

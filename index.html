@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Elise Pansier — Bande dessinée, dessin, encre.</title>
+<meta name="description" content="Elise Pansier. Bande dessinée, dessin, encre.">
+<meta name="theme-color" content="#f3efe6">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+<link rel="icon" type="image/png" sizes="256x256" href="favicon.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="preload" href="fonts/sharpie/Sharpie-Variable.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/apfel-grotezk/ApfelGrotezk-Regular.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/rock-salt/RockSalt-Regular.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="site.css">
+</head>
+<body>
+<div class="sheet" data-words="Dieu s&#x27;en tappe !|Hymen|Poisson pas-né|Drunker"><div class="sheet__words"></div></div>
+<canvas class="pencil" aria-hidden="true"></canvas>
+<header class="nav">
+  <a class="nav__name boil--hover" href="index.html">Elise Pansier</a>
+  <div class="nav__right">
+    <ul class="nav__links">
+      <li><a href="index.html#bd">BD</a></li>
+      <li><a href="index.html#dessins">Dessins</a></li>
+      <li><a href="index.html#apropos">À propos</a></li>
+    </ul>
+    <button class="menu-btn" data-module="menu-btn" aria-expanded="false" aria-label="Menu"><span class="menu-btn__bg"></span><span class="menu-btn__lines"></span></button>
+  </div>
+</header>
+<nav class="menu">
+  <ul class="menu__links">
+    <li><a href="index.html">Accueil</a></li>
+    <li><a href="index.html#bd">Bandes dessinées</a></li>
+    <li><a href="index.html#dessins">Dessins</a></li>
+    <li><a href="index.html#apropos">À propos</a></li>
+  </ul>
+  <div class="menu__contact">
+    <a href="https://www.instagram.com/pain_.au_chocolat/" target="_blank" rel="noopener"><span>Instagram</span><i>↗</i></a>
+    <a href="https://www.linkedin.com/in/elise-pansier-31a0bb278/" target="_blank" rel="noopener"><span>LinkedIn</span><i>↗</i></a>
+    <a href="mailto:elise.pansier@gmail.com"><span>elise.pansier@gmail.com</span><i>→</i></a>
+  </div>
+  <div class="menu__foot"><span>Elise Pansier</span><span>Bande dessinée, dessin, encre.</span><span>Paris</span></div>
+</nav>
+<button class="totop" data-module="totop" aria-label="Remonter"><span>↑</span></button>
+<div class="cursor"><div class="cursor__dot"></div><div class="cursor__ring"><span class="cursor__text"></span></div></div>
+
+<main data-page="home">
+  <section class="hero" data-module="theme" data-plate="#f3efe6" data-dark="0">
+    <div class="hero__covers" data-module="covers">
+      <a class="cover" href="bd/hymen.html" data-cursor="lire"><img src="assets/img/plan-de-travail-6-2400.webp" alt="Hymen, couverture" width="2480" height="1181" fetchpriority="high"></a>
+      <a class="cover" href="bd/poisson-pas-ne.html" data-cursor="lire"><img src="assets/img/plan-de-travail-7-2400.webp" alt="Poisson pas-né, couverture" width="2480" height="1215" fetchpriority="high"></a>
+      <a class="cover" href="bd/drunker.html" data-cursor="lire"><img src="assets/img/bunker-irl-2400.webp" alt="Drunker, couverture" width="2480" height="1215" fetchpriority="high"></a>
+    </div>
+    <div class="hero__text">
+      <h1 class="hero__title hand">Elise Pansier</h1>
+      <p class="sub">Bande dessinée, dessin, encre. Paris.</p>
+      <a class="link" href="#bd">Lire les bandes <i>›</i></a>
+    </div>
+  </section>
+
+  <section id="bd">
+  <article class="block" id="dieu-s-en-tappe" data-module="theme" data-plate="#79a6d6" data-dark="0">
+    <a class="block__plate" href="bd/dieu-s-en-tappe.html" data-cursor="lire">
+      <img src="assets/strips/dieu-s-en-tappe/000.webp" alt="Dieu s&#x27;en tappe !, couverture" loading="lazy">
+    </a>
+    <div class="block__text" data-module="reveal" data-reveal>
+      <p class="eyebrow">Bande dessinée · 2026</p>
+      <h2 class="block__title hand">Dieu s&#x27;en tappe !</h2>
+      <p class="sub">Une histoire courte. Encre et feutre.</p>
+      <a class="link" href="bd/dieu-s-en-tappe.html">Lire la bande <i>›</i></a>
+    </div>
+  </article>
+  <article class="block block--dark" id="hymen" data-module="theme" data-plate="#ed1f20" data-dark="1">
+    <a class="block__plate" href="bd/hymen.html" data-cursor="lire">
+      <img src="assets/img/plan-de-travail-6-1200.webp" alt="Hymen, couverture" loading="lazy">
+    </a>
+    <div class="block__text" data-module="reveal" data-reveal>
+      <p class="eyebrow">Bande dessinée · 2026</p>
+      <h2 class="block__title hand">Hymen</h2>
+      <p class="sub">Est-ce toi, Mirage ? Rouge sur blanc.</p>
+      <a class="link" href="bd/hymen.html">Lire la bande <i>›</i></a>
+    </div>
+  </article>
+  <article class="block block--dark" id="poisson-pas-ne" data-module="theme" data-plate="#4681c3" data-dark="1">
+    <a class="block__plate" href="bd/poisson-pas-ne.html" data-cursor="lire">
+      <img src="assets/img/plan-de-travail-7-1200.webp" alt="Poisson pas-né, couverture" loading="lazy">
+    </a>
+    <div class="block__text" data-module="reveal" data-reveal>
+      <p class="eyebrow">Bande dessinée · 2026</p>
+      <h2 class="block__title hand">Poisson pas-né</h2>
+      <p class="sub">Bleu stylo sur papier.</p>
+      <a class="link" href="bd/poisson-pas-ne.html">Lire la bande <i>›</i></a>
+    </div>
+  </article>
+  <article class="block block--dark" id="drunker" data-module="theme" data-plate="#403059" data-dark="1">
+    <a class="block__plate" href="bd/drunker.html" data-cursor="lire">
+      <img src="assets/img/bunker-irl-1200.webp" alt="Drunker, couverture" loading="lazy">
+    </a>
+    <div class="block__text" data-module="reveal" data-reveal>
+      <p class="eyebrow">Bande dessinée · 2026</p>
+      <h2 class="block__title hand">Drunker</h2>
+      <p class="sub">La plus longue. À descendre lentement.</p>
+      <a class="link" href="bd/drunker.html">Lire la bande <i>›</i></a>
+    </div>
+  </article>
+  </section>
+
+  <section id="dessins" class="section container" data-module="theme" data-plate="#f3efe6" data-dark="0">
+    <div class="head" data-module="reveal" data-reveal>
+      <p class="eyebrow">Dessins</p>
+      <h2 class="hand">Carnets, affiches, essais.</h2>
+    </div>
+    <div class="grid cascade" data-module="cascade">
+    <a class="card card--serie" href="bd/invasion.html" data-cursor="voir">
+      <img src="assets/strips/invasion/000.webp" alt="Invasion, première page" loading="lazy" width="1200" height="1500">
+      <figcaption>Invasion · série, 11 pages</figcaption>
+    </a>
+    <a class="card" href="assets/img/saltimbanques-2400.webp" data-full="assets/img/saltimbanques-2400.webp" style="--plate:#f3efe6" data-cursor="voir">
+      <img src="assets/img/saltimbanques-1200.webp" srcset="assets/img/saltimbanques-1200.webp 1200w, assets/img/saltimbanques-2400.webp 2400w" sizes="(min-width:760px) 33vw, 50vw" alt="Saltimbanques" loading="lazy">
+      <figcaption>Saltimbanques</figcaption>
+    </a>
+    <a class="card" href="assets/img/sans-titre-19-septembre-2026-00-10-2400.webp" data-full="assets/img/sans-titre-19-septembre-2026-00-10-2400.webp" style="--plate:#f3efe6" data-cursor="voir">
+      <img src="assets/img/sans-titre-19-septembre-2026-00-10-1200.webp" srcset="assets/img/sans-titre-19-septembre-2026-00-10-1200.webp 1200w, assets/img/sans-titre-19-septembre-2026-00-10-2400.webp 2400w" sizes="(min-width:760px) 33vw, 50vw" alt="Sans titre, 19 septembre 2026" loading="lazy">
+      <figcaption>Sans titre, 19 septembre 2026</figcaption>
+    </a>
+    <a class="card" href="assets/img/dr-m-2400.webp" data-full="assets/img/dr-m-2400.webp" style="--plate:#ffd3ea" data-cursor="voir">
+      <img src="assets/img/dr-m-1200.webp" srcset="assets/img/dr-m-1200.webp 1200w, assets/img/dr-m-2400.webp 2400w" sizes="(min-width:760px) 33vw, 50vw" alt="DR.M" loading="lazy">
+      <figcaption>DR.M</figcaption>
+    </a>
+    <a class="card" href="assets/img/pansier-elise-scan-sujet-invasion-2400.webp" data-full="assets/img/pansier-elise-scan-sujet-invasion-2400.webp" style="--plate:#f3efe6" data-cursor="voir">
+      <img src="assets/img/pansier-elise-scan-sujet-invasion-1200.webp" srcset="assets/img/pansier-elise-scan-sujet-invasion-1200.webp 1200w, assets/img/pansier-elise-scan-sujet-invasion-2400.webp 2400w" sizes="(min-width:760px) 33vw, 50vw" alt="Sujet invasion" loading="lazy">
+      <figcaption>Sujet invasion</figcaption>
+    </a>
+    </div>
+  </section>
+
+  <section id="apropos" class="about section container" data-module="theme" data-plate="#ffffff" data-dark="0">
+    <div class="deck" data-module="deck" aria-hidden="true">
+      <img src="assets/img/about-00-1200.webp" alt="" loading="lazy" width="1440" height="1056">
+      <img src="assets/img/about-01-1200.webp" alt="" loading="lazy" width="1439" height="1056">
+      <img src="assets/img/about-02-1200.webp" alt="" loading="lazy" width="1440" height="1056">
+      <img src="assets/img/about-03-1200.webp" alt="" loading="lazy" width="1438" height="1056">
+    </div>
+    <div class="head" data-module="reveal" data-reveal>
+      <h2 class="hand">Pas encore une artiste</h2>
+      
+    </div>
+    <ul class="contact" data-module="reveal" data-reveal>
+      <li><span class="eyebrow">Email</span><a class="crayon" href="mailto:elise.pansier@gmail.com">elise.pansier@gmail.com</a></li>
+      <li><span class="eyebrow">Instagram</span><a href="https://www.instagram.com/pain_.au_chocolat/" target="_blank" rel="noopener">Instagram ↗</a></li>
+      <li><span class="eyebrow">LinkedIn</span><a href="https://www.linkedin.com/in/elise-pansier-31a0bb278/" target="_blank" rel="noopener">LinkedIn ↗</a></li>
+      <li><span class="eyebrow">Ville</span><span>Paris</span></li>
+    </ul>
+  </section>
+</main>
+<footer class="foot">
+  <span class="hand">Elise Pansier</span>
+  <div class="foot__links"><a href="https://www.instagram.com/pain_.au_chocolat/" target="_blank" rel="noopener">Instagram</a><a href="https://www.linkedin.com/in/elise-pansier-31a0bb278/" target="_blank" rel="noopener">LinkedIn</a><a href="mailto:elise.pansier@gmail.com">Email</a></div>
+  <span class="foot__note">Tout est dessiné à la main.</span>
+</footer>
+<script src="js/kit-type.js"></script>
+<script src="js/kit-bd.js"></script>
+<script src="js/kit-web.js"></script>
+<script src="js/site.js"></script>
+</body>
+</html>
