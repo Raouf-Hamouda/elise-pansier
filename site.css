@@ -129,15 +129,16 @@ html.menu-open .nav{color:var(--paper)}
 .hero__title{font-size:var(--fs-hero);line-height:.95;rotate:-1.2deg;transform-origin:left bottom}
 
 /* ---------- full-screen BD blocks, background switches per block (immersive projectBlock + Zagnoli plates) ---------- */
-.block{min-height:100svh;display:grid;grid-template-columns:1fr;grid-template-rows:auto auto;align-content:center;gap:var(--gap);padding:calc(var(--nav-inset) + 72px) var(--container) var(--container);position:relative}
+.block{min-height:100svh;display:grid;grid-template-columns:1fr;grid-template-rows:auto auto;align-content:center;gap:var(--gap);column-gap:clamp(40px,6vw,110px);padding:calc(var(--nav-inset) + 72px) var(--container) var(--container);position:relative}
 @media(min-width:900px){
   .block{grid-template-columns:6fr 5fr;grid-template-rows:none;align-items:center;padding-top:var(--section);padding-bottom:var(--section)}
   .block:nth-child(even){grid-template-columns:5fr 6fr}.block:nth-child(even) .block__plate{order:2}
 }
-.block__plate{position:relative;display:grid;place-items:center;justify-self:center;width:100%;max-width:640px;background:#fff;padding:clamp(10px,1.4vw,22px);box-shadow:0 24px 70px rgba(0,0,0,.18)}
+.block__plate{position:relative;display:grid;place-items:center;justify-self:center;width:100%;max-width:640px;min-width:0;background:#fff;padding:clamp(10px,1.4vw,22px);box-shadow:0 24px 70px rgba(0,0,0,.18)}
 .block__plate img{width:100%;height:auto;max-height:68svh;object-fit:contain;object-position:top;transition:transform var(--d-slow) var(--ease-out-quint)}
 .block__plate:hover img{transform:scale(1.01)}
-.block__text{display:grid;gap:0;justify-items:start;max-width:40ch}
+.block__text{display:grid;gap:0;justify-items:start;max-width:40ch;min-width:0}
+@media(min-width:900px){.block:nth-child(odd) .block__text{padding-left:30px}.block:nth-child(even) .block__plate{justify-self:end;margin-right:30px}}
 .block__title{font-size:var(--fs-title);margin:14px 0 0;rotate:-1deg;transform-origin:left bottom}
 .block__text .link{margin-top:28px}
 
