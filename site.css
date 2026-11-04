@@ -170,8 +170,9 @@ html.menu-open .nav{color:var(--paper)}
 .about .head{grid-area:head}
 .about .head h2{font-size:var(--fs-about);rotate:-1.5deg;transform-origin:left bottom}.about .contact{grid-area:contact}
 .about .head{margin-bottom:0}
-.contact{list-style:none;margin:0;padding:0;display:grid;border-top:2px solid var(--fg)}
-.contact li{display:grid;grid-template-columns:7em 1fr;gap:1em;align-items:baseline;padding:1em 0;border-bottom:2px solid var(--fg);font-size:var(--fs-sub);font-weight:500;line-height:1.2}
+.contact{list-style:none;margin:0;padding:0;display:grid;position:relative}
+.contact > .rule{position:absolute;left:0;top:-6px;pointer-events:none}
+.contact li{display:grid;grid-template-columns:7em 1fr;gap:1em;align-items:baseline;padding:1em 0;position:relative;font-size:var(--fs-sub);font-weight:500;line-height:1.2}
 .contact a:hover{color:var(--pink)}
 .foot{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:1em 2em;padding:var(--gap) calc(var(--container) + 70px) calc(var(--gap) + 10px) var(--container);border-top:1px solid var(--border)}
 .foot .hand{font-size:1.4rem}
@@ -320,3 +321,6 @@ html.is-dark .crayon::before{mix-blend-mode:screen;opacity:.5}
 .menu-btn .frame path{stroke-width:2.2}
 .pill > :not(.frame),.link > :not(.frame),.chapters__card > :not(.frame),.bcard > :not(.frame),.totop > :not(.frame){position:relative;z-index:1}
 .bcard:hover{background:rgba(255,255,255,.6)}
+.rule{display:block;position:absolute;left:0;bottom:-4px;pointer-events:none;overflow:visible}
+.rule path{fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.contact li > .rule{grid-column:1/-1}

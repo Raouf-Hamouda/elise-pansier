@@ -141,7 +141,18 @@
     svg.setAttribute('viewBox', `0 0 ${w} ${h}`); svg.setAttribute('width', w); svg.setAttribute('height', h);
     svg.firstElementChild.setAttribute('d', d);
   }
-  const drawFrames = root => root.querySelectorAll(FRAME_SEL).forEach(drawFrame);
+  // hand-drawn rules under the contact rows (one unique line each, never straight)
+  function drawRule(el) {
+    if (!el.__seed) el.__seed = (frameSeed++ * 9301 + 49297) % 233280;
+    let r = el.__seed; const rnd = () => (r = (r * 9301 + 49297) % 233280) / 233280 - .5;
+    const w = el.offsetWidth; if (!w) return;
+    const n = Math.max(4, Math.round(w / 60)); let d = `M 0 ${(4 + rnd() * 2).toFixed(1)}`;
+    for (let i = 1; i <= n; i++) d += ` L ${(w * i / n + rnd() * 3).toFixed(1)} ${(4 + rnd() * 3).toFixed(1)}`;
+    let svg = el.querySelector(':scope > .rule');
+    if (!svg) { svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg'); svg.setAttribute('class', 'rule'); svg.setAttribute('aria-hidden', 'true'); svg.innerHTML = '<path/>'; el.appendChild(svg); }
+    svg.setAttribute('viewBox', `0 0 ${w} 8`); svg.setAttribute('width', w); svg.setAttribute('height', 8); svg.firstElementChild.setAttribute('d', d);
+  }
+  const drawFrames = root => { root.querySelectorAll(FRAME_SEL).forEach(drawFrame); root.querySelectorAll('.contact li, .contact').forEach(drawRule); };
   const origMount3 = KIT.mount; KIT.mount = r => { origMount3(r); requestAnimationFrame(() => drawFrames(r === document ? document : r)); };
   let rz; addEventListener('resize', () => { clearTimeout(rz); rz = setTimeout(() => drawFrames(document), 150); });
   document.fonts?.ready.then(() => drawFrames(document));
