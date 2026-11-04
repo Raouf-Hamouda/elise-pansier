@@ -114,7 +114,7 @@ def home():
       <img src="{M['images'][s['cover']]['src'] if s.get('cover') else s['first']['src']}" alt="{e(s['title'])}, couverture" loading="lazy">
     </a>
     <div class="block__text" data-module="reveal" data-reveal>
-      <p class="eyebrow">Bande dessinée · {e(s['year'])} · {len(s['tiles'])} écrans</p>
+      <p class="eyebrow">Bande dessinée · {e(s['year'])}</p>
       <h2 class="block__title hand">{e(s['title'])}</h2>
       <a class="link" href="{s['url']}">Lire la bande <i>›</i></a>
     </div>
