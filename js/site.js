@@ -166,6 +166,28 @@
   const menu = document.querySelector('.menu');
   if (menu) new MutationObserver(() => root.classList.toggle('menu-open', menu.classList.contains('is-open'))).observe(menu, { attributes: true, attributeFilter: ['class'] });
   addEventListener('DOMContentLoaded', pencil);
+
+  /* ---- ?reglages : live knobs for spacing and title sizes; values land in the clipboard, Raouf pastes them back ---- */
+  if (location.search.includes('reglages')) {
+    const KNOBS = [
+      ['--fs-title', 'Titre des bandes (px)', 24, 110, 'px'], ['--fs-hero', 'Nom en haut (px)', 28, 140, 'px'], ['--fs-section', 'Titres Dessins / Bandes (px)', 20, 100, 'px'],
+      ['--fs-about', 'Pas encore une artiste (px)', 16, 80, 'px'], ['--sp-eyebrow', 'Espace étiquette → titre', 0, 80, 'px'], ['--sp-button', 'Espace titre → bouton', 0, 120, 'px'], ['--sp-sub', 'Espace titre → sous-ligne', 0, 60, 'px']];
+    const saved = JSON.parse(localStorage.getItem('reglages') || '{}');
+    const panel = document.createElement('div'); panel.className = 'reglages';
+    panel.innerHTML = '<b>Réglages</b><small>Bouge, regarde, puis colle-moi les valeurs (copiées).</small>' + KNOBS.map(([v, l, a, b, u]) => {
+      const cur = saved[v] ? parseFloat(saved[v]) : Math.round(parseFloat(getComputedStyle(document.querySelector('.block__title, h1, h2') || document.body).fontSize) || (a + b) / 2);
+      return `<label>${l}<output>${saved[v] || 'auto'}</output><input type="range" min="${a}" max="${b}" value="${cur}" data-var="${v}" data-unit="${u}"></label>`; }).join('') + '<button type="button" data-reset>Remettre</button>';
+    document.body.appendChild(panel);
+    const apply = () => { Object.entries(saved).forEach(([k, v]) => root.style.setProperty(k, v)); };
+    apply();
+    panel.addEventListener('input', e => {
+      const i = e.target; if (!i.dataset.var) return;
+      saved[i.dataset.var] = i.value + i.dataset.unit; i.previousElementSibling.textContent = saved[i.dataset.var];
+      localStorage.setItem('reglages', JSON.stringify(saved)); apply();
+      navigator.clipboard?.writeText(Object.entries(saved).map(([k, v]) => `${k}: ${v};`).join('\n')).catch(() => {});
+    });
+    panel.querySelector('[data-reset]').addEventListener('click', () => { localStorage.removeItem('reglages'); location.reload(); });
+  }
   // header / menu / footer stay in place across page swaps: freeze their links to absolute URLs so '../index.html' keeps meaning the home
   document.querySelectorAll('.nav a[href], .menu a[href], .foot a[href]').forEach(a => a.setAttribute('href', a.href));
 })();
