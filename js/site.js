@@ -121,6 +121,31 @@
     return { destroy: () => clearInterval(t) };
   });
 
+  /* ---- hand-drawn frames: one unique wobbly SVG stroke per element (seeded per element, redrawn on resize) ---- */
+  const FRAME_SEL = '.pill, .link, .bcard, .chapters__card, .totop, .menu-btn';
+  let frameSeed = 1;
+  function drawFrame(el) {
+    if (!el.__seed) el.__seed = (frameSeed++ * 9301 + 49297) % 233280;
+    let r = el.__seed; const rnd = () => (r = (r * 9301 + 49297) % 233280) / 233280 - .5;
+    const w = el.offsetWidth, h = el.offsetHeight; if (!w || !h) return;
+    const j = Math.min(3.2, Math.max(1.4, Math.min(w, h) * .05));                  // jitter amplitude in px
+    const pt = (x, y) => `${(x + rnd() * j).toFixed(1)} ${(y + rnd() * j).toFixed(1)}`;
+    const side = (x1, y1, x2, y2, n) => { let d = ''; for (let i = 1; i <= n; i++) { const t = i / n; d += ` L ${pt(x1 + (x2 - x1) * t, y1 + (y2 - y1) * t)}`; } return d; };
+    const o = 2 + rnd() * 2, nx = Math.max(3, Math.round(w / 40)), ny = Math.max(2, Math.round(h / 40));
+    const round = el.matches('.menu-btn, .totop');
+    let d;
+    if (round) { const cx = w / 2, cy = h / 2, rx = w / 2 - 2, ry = h / 2 - 2, n = 18; d = `M ${pt(cx + rx, cy)}`; for (let i = 1; i <= n + 1; i++) { const a = i / n * Math.PI * 2 + rnd() * .04; d += ` L ${pt(cx + Math.cos(a) * rx * (1 + rnd() * .06), cy + Math.sin(a) * ry * (1 + rnd() * .06))}`; } }
+    else { d = `M ${pt(o, o)}` + side(o, o, w - o, o, nx) + side(w - o, o, w - o, h - o, ny) + side(w - o, h - o, o, h - o, nx) + side(o, h - o, o, o + 3, ny); }
+    let svg = el.querySelector(':scope > .frame');
+    if (!svg) { svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg'); svg.setAttribute('class', 'frame'); svg.setAttribute('aria-hidden', 'true'); svg.innerHTML = '<path/>'; el.prepend(svg); }
+    svg.setAttribute('viewBox', `0 0 ${w} ${h}`); svg.setAttribute('width', w); svg.setAttribute('height', h);
+    svg.firstElementChild.setAttribute('d', d);
+  }
+  const drawFrames = root => root.querySelectorAll(FRAME_SEL).forEach(drawFrame);
+  const origMount3 = KIT.mount; KIT.mount = r => { origMount3(r); requestAnimationFrame(() => drawFrames(r === document ? document : r)); };
+  let rz; addEventListener('resize', () => { clearTimeout(rz); rz = setTimeout(() => drawFrames(document), 150); });
+  document.fonts?.ready.then(() => drawFrames(document));
+
   /* ---- back to top: appears after one screen ---- */
   KIT.register('totop', btn => {
     const on = () => btn.classList.toggle('is-on', scrollY > innerHeight * .9);
