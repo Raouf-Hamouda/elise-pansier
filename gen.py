@@ -18,7 +18,7 @@ ABOUT = []
 STRIPS = [
     dict(id="dieu-s-en-tappe", title="Dieu s'en tappe !", sub="Une histoire courte. Encre et feutre.", plate="#ff48b0", dark=False, year="2026"),
     dict(id="hymen", title="Hymen", sub="Est-ce toi, Mirage ? Rouge sur blanc.", plate="#f3efe6", dark=False, year="2026", cover="plan-de-travail-6"),
-    dict(id="poisson-pas-ne", title="Poisson pas-né", sub="Bleu stylo sur papier.", plate="#0078bf", dark=True, year="2026", cover="plan-de-travail-7"),
+    dict(id="poisson-pas-ne", title="Poisson pas‑né", sub="Bleu stylo sur papier.", plate="#0078bf", dark=True, year="2026", cover="plan-de-travail-7"),
     dict(id="drunker", title="Drunker", sub="La plus longue. À descendre lentement.", plate="#141414", dark=True, year="2026", cover="bunker-irl"),   # TODO confirm: Bunker I.R.L = cover of Drunker?
 ]
 SERIES = [  # illustration series: viewer page like a bande, listed under Dessins, not in the BD count
