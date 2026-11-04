@@ -167,6 +167,31 @@
   if (menu) new MutationObserver(() => root.classList.toggle('menu-open', menu.classList.contains('is-open'))).observe(menu, { attributes: true, attributeFilter: ['class'] });
   addEventListener('DOMContentLoaded', pencil);
 
+  /* ---- ?placer : grab elements with the mouse and drop them; offsets saved locally + copied to clipboard ---- */
+  if (location.search.includes('placer')) {
+    const SEL = '.block__text > *, .hero__text > *, .head > *, .block__plate, .hero__covers, .reader-top > *, .contact, .deck';
+    const keyOf = el => { const sec = el.closest('[id]'); return (sec ? sec.id : location.pathname.split('/').pop()) + ' ' + (el.className.baseVal ?? el.className).toString().split(' ').filter(c => !/^is-|^boil/.test(c)).slice(0, 2).map(c => '.' + c).join(''); };
+    const saved = JSON.parse(localStorage.getItem('placer') || '{}');
+    const applyAll = () => document.querySelectorAll(SEL).forEach(el => { const o = saved[keyOf(el)]; if (o) { el.style.translate = `${o.x}px ${o.y}px`; } });
+    applyAll();
+    document.body.classList.add('placing');
+    const tip = document.createElement('div'); tip.className = 'reglages'; tip.innerHTML = '<b>Placer</b><small>Attrape un élément, pose-le. Les positions sont copiées. Double-clic = remettre.</small><button type="button" data-reset>Tout remettre</button>'; document.body.appendChild(tip);
+    tip.querySelector('[data-reset]').addEventListener('click', () => { localStorage.removeItem('placer'); location.reload(); });
+    let drag = null;
+    document.addEventListener('pointerdown', e => {
+      const el = e.target.closest(SEL); if (!el || e.target.closest('.reglages')) return;
+      e.preventDefault(); const k = keyOf(el); const o = saved[k] || { x: 0, y: 0 };
+      drag = { el, k, sx: e.clientX - o.x, sy: e.clientY - o.y }; el.classList.add('is-dragging'); el.setPointerCapture?.(e.pointerId);
+    });
+    document.addEventListener('pointermove', e => { if (!drag) return; const x = Math.round(e.clientX - drag.sx), y = Math.round(e.clientY - drag.sy); saved[drag.k] = { x, y }; drag.el.style.translate = `${x}px ${y}px`; });
+    document.addEventListener('pointerup', () => {
+      if (!drag) return; drag.el.classList.remove('is-dragging'); drag = null;
+      localStorage.setItem('placer', JSON.stringify(saved)); navigator.clipboard?.writeText(JSON.stringify(saved, null, 1)).catch(() => {});
+    });
+    document.addEventListener('dblclick', e => { const el = e.target.closest(SEL); if (!el) return; delete saved[keyOf(el)]; el.style.translate = ''; localStorage.setItem('placer', JSON.stringify(saved)); });
+    document.addEventListener('click', e => { if (e.target.closest(SEL) && !e.target.closest('.reglages')) { e.preventDefault(); e.stopPropagation(); } }, true);
+  }
+
   /* ---- ?reglages : live knobs for spacing and title sizes; values land in the clipboard, Raouf pastes them back ---- */
   if (location.search.includes('reglages')) {
     const KNOBS = [

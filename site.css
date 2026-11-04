@@ -306,3 +306,8 @@ html.is-dark .crayon::before{mix-blend-mode:screen;opacity:.5}
 .reglages label{display:grid;grid-template-columns:1fr auto;gap:4px 8px;align-items:center}
 .reglages input{grid-column:1/-1;width:100%}
 .reglages small{opacity:.6}
+
+/* ---------- placing mode (?placer) ---------- */
+.placing .block__text > *,.placing .hero__text > *,.placing .head > *,.placing .block__plate,.placing .hero__covers,.placing .reader-top > *,.placing .contact,.placing .deck{cursor:grab;outline:1px dashed rgba(255,72,176,.7);outline-offset:6px;user-select:none;-webkit-user-drag:none}
+.placing .is-dragging{cursor:grabbing;outline:2px solid var(--pink)}
+.placing .cursor,.placing .pencil{display:none!important}
