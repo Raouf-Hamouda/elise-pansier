@@ -98,6 +98,7 @@ def foot(base=""):
   <div class="foot__links"><a href="{INSTA}" target="_blank" rel="noopener">Instagram</a><a href="{LINKEDIN}" target="_blank" rel="noopener">LinkedIn</a><a href="mailto:{MAIL}">Email</a></div>
   <span class="foot__note">Tout est dessiné à la main.</span>
 </footer>
+<script src="{base}js/vendor/lenis.min.js"></script>
 <script src="{base}js/kit-type.js"></script>
 <script src="{base}js/kit-bd.js"></script>
 <script src="{base}js/kit-web.js"></script>
@@ -176,7 +177,7 @@ def reader(i, s, serie=False):
     prev_, next_ = STRIPS[i-1], STRIPS[(i+1) % len(STRIPS)]
     kind = "Série · aquarelle" if serie else f"Bande {i+1} sur {len(STRIPS)}"
     tiles = "".join(f"""
-      <figure class="bd-planche"><img data-src="../{t['src']}" width="{t['w']}" height="{t['h']}" alt=""></figure>""" for t in s["tiles"])
+      <figure class="bd-planche"><img data-src="../{t['src']}" width="{t['w']}" height="{t['h']}" alt="" decoding="async"></figure>""" for t in s["tiles"])
     return head(f"{s['title']} — {NAME}", base="../") + f"""
 <main data-page="bd" data-module="theme" data-plate="{s['plate']}" data-dark="{int(s['dark'])}">
   <header class="reader-top">

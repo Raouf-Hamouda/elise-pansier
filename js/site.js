@@ -27,14 +27,14 @@
 
   /* ---- vertical strip reader: lazy tiles + progress + j/k (bd_comics kit, scroll mode only) ---- */
   KIT.register('reader', el => {
-    BDKit.lazy(el, '1200px 0px');
+    BDKit.lazy(el, '2400px 0px');                       // decode well ahead of the viewport
     el.querySelectorAll('.bd-planche').forEach(p => viewIO.observe(p));
     heads(el);
     const bar = el.querySelector('.strip__progress > i');
-    const onScroll = () => {
-      const r = el.getBoundingClientRect();
-      const p = Math.min(1, Math.max(0, (innerHeight - r.top) / (r.height + innerHeight)));
-      if (bar) bar.style.width = (p * 100).toFixed(1) + '%';
+    let ticking = false;
+    const onScroll = () => {                             // one rAF per frame, transform only (compositor), no layout thrash
+      if (ticking) return; ticking = true;
+      requestAnimationFrame(() => { ticking = false; const r = el.getBoundingClientRect(); const p = Math.min(1, Math.max(0, (innerHeight - r.top) / (r.height + innerHeight))); if (bar) bar.style.transform = `scaleX(${p.toFixed(4)})`; });
     };
     const onKey = e => {
       if (e.target.matches('input,textarea')) return;
