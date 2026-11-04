@@ -88,7 +88,7 @@ def head(title, base=""):
   </div>
   <div class="menu__foot"><span>{e(NAME)}</span><span>{e(TAGLINE)}</span><span>{e(CITY)}</span></div>
 </nav>
-<button class="totop" data-module="totop" aria-label="Remonter"><span>↑</span></button>
+<button class="totop" data-module="totop" aria-label="Remonter"><svg class="arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M12.3 19.6 C12 15 12.2 10 11.8 5.2 M5.6 11.4 C7.8 9.2 9.9 6.8 11.9 4.6 C14.2 6.9 16.1 9.3 18.2 11.1"/></svg></button>
 <div class="cursor"><div class="cursor__dot"></div><div class="cursor__ring"><span class="cursor__text"></span></div></div>
 """
 
@@ -167,7 +167,6 @@ def home():
       <li><span class="eyebrow">Email</span><a class="crayon" href="mailto:{MAIL}">{MAIL}</a></li>
       <li><span class="eyebrow">Instagram</span><a href="{INSTA}" target="_blank" rel="noopener">Instagram ↗</a></li>
       <li><span class="eyebrow">LinkedIn</span><a href="{LINKEDIN}" target="_blank" rel="noopener">LinkedIn ↗</a></li>
-      <li><span class="eyebrow">Ville</span><span>{e(CITY)}</span></li>
     </ul>
   </section>
 </main>

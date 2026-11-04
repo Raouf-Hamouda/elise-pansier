@@ -185,7 +185,7 @@ html.menu-open .nav{color:var(--paper)}
 .totop.is-on{opacity:1;pointer-events:auto;transform:none}
 html.menu-open .totop{opacity:0;pointer-events:none}
 .totop:hover{color:var(--pink)}
-.totop span{transition:transform var(--d-fast) var(--ease-out-quint)}.totop:hover span{transform:translateY(-3px)}
+.totop .arrow{width:22px;height:22px;transition:transform var(--d-fast) var(--ease-out-quint)}.totop .arrow path{fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}.totop:hover .arrow{transform:translateY(-3px)}
 
 /* ---------- reader page: opens straight on her drawn title (bd_comics scroll mode) ---------- */
 .reader-top{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:1em;max-width:var(--reader-max);margin:0 auto;padding:calc(var(--nav-inset) + 76px) var(--container) clamp(20px,3vw,36px)}
@@ -324,3 +324,5 @@ html.is-dark .crayon::before{mix-blend-mode:screen;opacity:.5}
 .rule{display:block;position:absolute;left:0;bottom:-4px;pointer-events:none;overflow:visible}
 .rule path{fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
 .contact li > .rule{grid-column:1/-1}
+.rule{display:block;position:absolute;left:0;bottom:-4px;pointer-events:none;overflow:visible}
+.rule path{fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
