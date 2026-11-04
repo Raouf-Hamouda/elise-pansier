@@ -167,16 +167,27 @@
   if (menu) new MutationObserver(() => root.classList.toggle('menu-open', menu.classList.contains('is-open'))).observe(menu, { attributes: true, attributeFilter: ['class'] });
   addEventListener('DOMContentLoaded', pencil);
 
+  /* ---- placements chosen by hand (assets/placements.json, saved from ?placer) ---- */
+  const PLACE_SEL = '.block__text > *, .hero__text > *, .head > *, .block__plate, .hero__covers, .reader-top > *, .contact, .deck';
+  const placeKey = el => { const sec = el.closest('[id]'); return (sec ? sec.id : location.pathname.split('/').pop()) + ' ' + (el.className.baseVal ?? el.className).toString().split(' ').filter(c => !/^is-|^boil/.test(c)).slice(0, 2).map(c => '.' + c).join(''); };
+  let placements = null;
+  async function applyPlacements(root) {
+    if (matchMedia('(max-width: 600px)').matches) return;   // hand placements are for desktop / tablet; phones keep the flow
+    if (!placements) { try { placements = await (await fetch(new URL('assets/placements.json', document.querySelector('link[rel=stylesheet]').href))).json(); } catch (_) { placements = {}; } }
+    root.querySelectorAll(PLACE_SEL).forEach(el => { const o = placements[placeKey(el)]; if (o) el.style.translate = `${o.x}px ${o.y}px`; });
+  }
+  const origMount2 = KIT.mount; KIT.mount = r => { origMount2(r); if (!location.search.includes('placer')) applyPlacements(r === document ? document : r); };
+
   /* ---- ?placer : grab elements with the mouse and drop them; offsets saved locally + copied to clipboard ---- */
   if (location.search.includes('placer')) {
-    const SEL = '.block__text > *, .hero__text > *, .head > *, .block__plate, .hero__covers, .reader-top > *, .contact, .deck';
-    const keyOf = el => { const sec = el.closest('[id]'); return (sec ? sec.id : location.pathname.split('/').pop()) + ' ' + (el.className.baseVal ?? el.className).toString().split(' ').filter(c => !/^is-|^boil/.test(c)).slice(0, 2).map(c => '.' + c).join(''); };
+    const SEL = PLACE_SEL, keyOf = placeKey;
     const saved = JSON.parse(localStorage.getItem('placer') || '{}');
     const applyAll = () => document.querySelectorAll(SEL).forEach(el => { const o = saved[keyOf(el)]; if (o) { el.style.translate = `${o.x}px ${o.y}px`; } });
     applyAll();
     document.body.classList.add('placing');
-    const tip = document.createElement('div'); tip.className = 'reglages'; tip.innerHTML = '<b>Placer</b><small>Attrape un élément, pose-le. Les positions sont copiées. Double-clic = remettre.</small><button type="button" data-reset>Tout remettre</button>'; document.body.appendChild(tip);
+    const tip = document.createElement('div'); tip.className = 'reglages'; tip.innerHTML = '<b>Placer</b><small>Attrape un élément, pose-le. Double-clic = remettre.</small><button type="button" data-save>Enregistrer (placements.json)</button><button type="button" data-reset>Tout remettre</button>'; document.body.appendChild(tip);
     tip.querySelector('[data-reset]').addEventListener('click', () => { localStorage.removeItem('placer'); location.reload(); });
+    tip.querySelector('[data-save]').addEventListener('click', () => { const a = document.createElement('a'); a.href = URL.createObjectURL(new Blob([JSON.stringify(saved, null, 1)], { type: 'application/json' })); a.download = 'placements.json'; a.click(); });
     let drag = null;
     document.addEventListener('pointerdown', e => {
       const el = e.target.closest(SEL); if (!el || e.target.closest('.reglages')) return;

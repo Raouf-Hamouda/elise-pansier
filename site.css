@@ -306,6 +306,8 @@ html.is-dark .crayon::before{mix-blend-mode:screen;opacity:.5}
 .reglages label{display:grid;grid-template-columns:1fr auto;gap:4px 8px;align-items:center}
 .reglages input{grid-column:1/-1;width:100%}
 .reglages small{opacity:.6}
+.reglages button{font:inherit;padding:8px 10px;border:1px solid var(--paper);background:transparent;color:var(--paper);border-radius:6px;cursor:pointer}
+.reglages button:hover{background:var(--paper);color:var(--ink)}
 
 /* ---------- placing mode (?placer) ---------- */
 .placing .block__text > *,.placing .hero__text > *,.placing .head > *,.placing .block__plate,.placing .hero__covers,.placing .reader-top > *,.placing .contact,.placing .deck{cursor:grab;outline:1px dashed rgba(255,72,176,.7);outline-offset:6px;user-select:none;-webkit-user-drag:none}

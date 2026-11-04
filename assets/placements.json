@@ -1,0 +1,58 @@
+{
+ "drunker .block__title.hand": {
+  "x": 98,
+  "y": 4
+ },
+ "drunker .eyebrow": {
+  "x": 97,
+  "y": -1
+ },
+ "drunker .link": {
+  "x": 91,
+  "y": 1
+ },
+ "poisson-pas-ne .block__title.hand": {
+  "x": 28,
+  "y": 0
+ },
+ "poisson-pas-ne .eyebrow": {
+  "x": 27,
+  "y": 0
+ },
+ "poisson-pas-ne .link": {
+  "x": 22,
+  "y": 0
+ },
+ "hymen .block__title.hand": {
+  "x": 67,
+  "y": 0
+ },
+ "hymen .eyebrow": {
+  "x": 67,
+  "y": -2
+ },
+ "hymen .link": {
+  "x": 62,
+  "y": -4
+ },
+ "dieu-s-en-tappe .block__title.hand": {
+  "x": 36,
+  "y": 0
+ },
+ "dieu-s-en-tappe .eyebrow": {
+  "x": 35,
+  "y": -1
+ },
+ "dieu-s-en-tappe .link": {
+  "x": 31,
+  "y": -14
+ },
+ "index.html .hero__title.hand": {
+  "x": 0,
+  "y": 16
+ },
+ "apropos .hand": {
+  "x": 37,
+  "y": 33
+ }
+}
