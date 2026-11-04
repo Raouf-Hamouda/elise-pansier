@@ -107,20 +107,17 @@
     return { destroy: () => clearInterval(t) };
   });
 
-  /* ---- about deck: her real sheets in a pile; the top one flies off and is gone; when one is left the pile is rebuilt ---- */
+  /* ---- about deck: her 4 real sheets; the top one flies off, then slips back under the pile. Never an empty pile. ---- */
   KIT.register('deck', el => {
     const imgs = [...el.children]; if (imgs.length < 2) return;
     let pile = [...imgs];
     const order = () => pile.forEach((im, i) => im.style.setProperty('--i', i));
-    const reset = () => { pile = [...imgs]; pile.forEach(im => im.classList.remove('is-gone', 'is-leaving')); order(); };
-    reset();
+    order();
     const t = setInterval(() => {
       if (document.hidden) return;
-      const top = pile.shift(); top.classList.add('is-leaving');
-      setTimeout(() => top.classList.add('is-gone'), 700);
-      order();
-      if (pile.length === 0) setTimeout(() => { reset(); el.classList.add('is-fresh'); setTimeout(() => el.classList.remove('is-fresh'), 50); }, 450);   // last one leaving: the pile is laid out again underneath, no empty hole
-    }, 2600);
+      const top = pile.shift(); top.classList.add('is-leaving'); order();
+      setTimeout(() => { top.classList.add('is-back'); top.classList.remove('is-leaving'); pile.push(top); order(); requestAnimationFrame(() => requestAnimationFrame(() => top.classList.remove('is-back'))); }, 750);
+    }, 2800);
     return { destroy: () => clearInterval(t) };
   });
 
