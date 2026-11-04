@@ -17,7 +17,7 @@
   --font-text:"Apfel Grotezk",-apple-system,"Helvetica Neue",system-ui,sans-serif;
   /* Apple-style scale: eyebrow 12-14 / body 17-19 / sub 21-28 / title 40-80 */
   --fs-eyebrow:clamp(12px,.85vw,14px);--fs-body:clamp(16px,1.05vw,19px);--fs-sub:clamp(19px,1.6vw,28px);
-  --fs-title:clamp(2.6rem,6vw,5.5rem);--fs-hero:clamp(3.2rem,9vw,9rem);
+  --fs-title:clamp(2.4rem,4.6vw,4.4rem);--fs-hero:clamp(2.8rem,6vw,5.6rem);
   --container:clamp(20px,5vw,80px);--section:clamp(72px,12vh,160px);--gap:clamp(20px,3vw,40px);
   --nav-inset:18px;--nav-inset-x:clamp(18px,2.5vw,32px);
   --ease-out-expo:cubic-bezier(.19,1,.22,1);--ease-out-quint:cubic-bezier(.23,1,.32,1);--ease-sheet:cubic-bezier(.7,0,.3,1);--ease-back:cubic-bezier(.34,1.56,.64,1);
@@ -43,7 +43,7 @@ html.is-dark .link{color:var(--fg)}
 .container{padding-left:var(--container);padding-right:var(--container)}
 .section{padding-top:var(--section);padding-bottom:var(--section)}
 .head{display:grid;gap:.6em;max-width:60ch;margin-bottom:clamp(32px,5vw,64px)}
-.head h2{font-size:var(--fs-title);margin:.1em 0 .1em}
+.head h2{font-size:var(--fs-title);margin:.1em 0 .1em;rotate:-1deg;transform-origin:left bottom}
 
 /* paper grain: a tiled noise layer in the body background (blend once, no fixed overlay repainting on scroll) */
 body{background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='220' height='220'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/><feColorMatrix type='saturate' values='0'/><feComponentTransfer><feFuncA type='table' tableValues='0 .10'/></feComponentTransfer></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");background-size:220px 220px;background-blend-mode:multiply}
@@ -120,7 +120,7 @@ html.menu-open .nav{color:var(--paper)}
 .cover img{height:100%;width:auto;max-width:100%;object-fit:contain;box-sizing:border-box;background:#fff;padding:clamp(12px,2vw,28px);box-shadow:0 20px 60px rgba(0,0,0,.12);transition:transform var(--d-slow) var(--ease-out-quint)}
 .cover:hover img{transform:translateY(-1%) scale(1.01)}
 .hero__text{display:grid;gap:.55em;justify-items:start}
-.hero__title{font-size:clamp(2.8rem,7vw,6.5rem);line-height:.95;rotate:-1.2deg;transform-origin:left bottom}
+.hero__title{font-size:var(--fs-hero);line-height:.95;rotate:-1.2deg;transform-origin:left bottom}
 
 /* ---------- full-screen BD blocks, background switches per block (immersive projectBlock + Zagnoli plates) ---------- */
 .block{min-height:100svh;display:grid;grid-template-columns:1fr;grid-template-rows:auto auto;align-content:center;gap:var(--gap);padding:calc(var(--nav-inset) + 72px) var(--container) var(--container);position:relative}
@@ -132,7 +132,7 @@ html.menu-open .nav{color:var(--paper)}
 .block__plate img{width:100%;height:auto;max-height:68svh;object-fit:contain;object-position:top;transition:transform var(--d-slow) var(--ease-out-quint)}
 .block__plate:hover img{transform:scale(1.01)}
 .block__text{display:grid;gap:.55em;justify-items:start;max-width:40ch}
-.block__title{font-size:var(--fs-title);margin:.05em 0 .15em;rotate:-1deg;transform-origin:left bottom}
+.block__title{font-size:var(--fs-title);margin:.05em 0 .25em;rotate:-1deg;transform-origin:left bottom}
 .block__text .link{margin-top:.6em}
 
 /* ---------- drawings (illustrators: cards, cascade, multiply; bd_comics zoom) ---------- */
@@ -157,7 +157,7 @@ html.menu-open .nav{color:var(--paper)}
 .deck img.is-gone{display:none}
 .deck.is-fresh img{opacity:0;transform:translate(0,12px) scale(.98)}
 .about .head{grid-area:head}
-.about .head h2{font-size:clamp(1.8rem,3.2vw,3rem);rotate:-1.5deg;transform-origin:left bottom}.about .contact{grid-area:contact}
+.about .head h2{font-size:var(--fs-title);rotate:-1.5deg;transform-origin:left bottom}.about .contact{grid-area:contact}
 .about .head{margin-bottom:0}
 .contact{list-style:none;margin:0;padding:0;display:grid;border-top:2px solid var(--fg)}
 .contact li{display:grid;grid-template-columns:7em 1fr;gap:1em;align-items:baseline;padding:1em 0;border-bottom:2px solid var(--fg);font-size:var(--fs-sub);font-weight:500;line-height:1.2}
@@ -178,7 +178,7 @@ html.menu-open .totop{opacity:0;pointer-events:none}
 /* ---------- reader page: opens straight on her drawn title (bd_comics scroll mode) ---------- */
 .reader-top{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:1em;max-width:var(--reader-max);margin:0 auto;padding:calc(var(--nav-inset) + 76px) var(--container) clamp(20px,3vw,36px)}
 .reader-top__mid{text-align:center;display:grid;gap:.2em;justify-items:center}
-.reader-top__mid b{font-family:var(--font-hand);font-weight:700;font-size:clamp(1.6rem,3.5vw,2.6rem);line-height:1;rotate:-1deg}
+.reader-top__mid b{font-family:var(--font-hand);font-weight:700;font-size:clamp(1.6rem,2.6vw,2.4rem);line-height:1;rotate:-1deg}
 .reader-top__mid a:hover{color:var(--fg)}
 .reader-top__mid span,.reader-top__mid a{font-size:var(--fs-eyebrow);font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
 .pill{display:inline-flex;align-items:center;gap:.4em;height:46px;padding:0 20px;border-radius:var(--hand-radius);border:2px solid var(--fg);font-size:var(--fs-body);font-weight:500;white-space:nowrap;transition:background var(--d-fast),color var(--d-fast)}
