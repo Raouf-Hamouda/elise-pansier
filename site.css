@@ -282,3 +282,17 @@ html.is-dark .crayon::before{mix-blend-mode:screen;opacity:.5}
 
 .card--serie{cursor:pointer}
 .card--serie figcaption{color:var(--pink)}
+
+/* ---------- bandes.html: all the bandes on one page ---------- */
+.bandes{padding-top:calc(var(--nav-inset) + 96px);padding-bottom:var(--section)}
+.bandes .head h1{font-size:var(--fs-title);rotate:-1deg;transform-origin:left bottom}
+.bgrid{display:grid;grid-template-columns:1fr;gap:clamp(24px,4vw,56px)}
+@media(min-width:700px){.bgrid{grid-template-columns:1fr 1fr}}
+.bcard{display:grid;gap:18px;padding:clamp(14px,2vw,26px);border:2px solid var(--fg);border-radius:var(--hand-radius);transition:background var(--d-fast),color var(--d-fast)}
+.bcard:nth-child(2){border-radius:var(--hand-radius-2);rotate:.4deg}.bcard:nth-child(3){border-radius:var(--hand-radius-3);rotate:-.5deg}.bcard:nth-child(4){border-radius:var(--hand-radius-4);rotate:.3deg}.bcard:nth-child(1){rotate:-.3deg}
+.bcard__paper{display:grid;place-items:center;background:#fff;padding:clamp(10px,1.4vw,18px);box-shadow:0 10px 30px rgba(0,0,0,.1)}
+.bcard__paper img{width:100%;height:auto;max-height:46svh;object-fit:contain;object-position:top}
+.bcard__text{display:grid;gap:6px}
+.bcard__text b{font-size:clamp(1.5rem,2.6vw,2.3rem);line-height:1}
+.bcard:hover{background:var(--fg);color:var(--bg)}
+.bcard:hover .eyebrow{color:inherit;opacity:.7}

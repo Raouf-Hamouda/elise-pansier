@@ -67,7 +67,7 @@ def head(title, base=""):
   <a class="nav__name boil--hover" href="{base}index.html">{e(NAME)}</a>
   <div class="nav__right">
     <ul class="nav__links">
-      <li><a href="{base}index.html#bd">BD</a></li>
+      <li><a href="{base}bandes.html">BD</a></li>
       <li><a href="{base}index.html#dessins">Dessins</a></li>
       <li><a href="{base}index.html#apropos">À propos</a></li>
     </ul>
@@ -77,7 +77,7 @@ def head(title, base=""):
 <nav class="menu">
   <ul class="menu__links">
     <li><a href="{base}index.html">Accueil</a></li>
-    <li><a href="{base}index.html#bd">Bandes dessinées</a></li>
+    <li><a href="{base}bandes.html">Bandes dessinées</a></li>
     <li><a href="{base}index.html#dessins">Dessins</a></li>
     <li><a href="{base}index.html#apropos">À propos</a></li>
   </ul>
@@ -141,7 +141,7 @@ def home():
     <div class="hero__text">
       <h1 class="hero__title hand">{e(NAME)}</h1>
       <p class="sub">{e(TAGLINE)} {e(CITY)}.</p>
-      <a class="link" href="#bd">Lire les bandes <i>›</i></a>
+      <a class="link" href="bandes.html">Lire les bandes <i>›</i></a>
     </div>
   </section>
 
@@ -183,7 +183,7 @@ def reader(i, s, serie=False):
 <main data-page="bd" data-module="theme" data-plate="{s['plate']}" data-dark="{int(s['dark'])}">
   <header class="reader-top">
     <a class="pill" href="{prev_['id']}.html">‹ Précédente</a>
-    <div class="reader-top__mid"><b>{e(s['title'])}</b><a href="../index.html#{'dessins' if serie else 'bd'}">{kind}</a></div>
+    <div class="reader-top__mid"><b>{e(s['title'])}</b><a href="{'../index.html#dessins' if serie else '../bandes.html'}">{kind}</a></div>
     <a class="pill" href="{next_['id']}.html">Suivante ›</a>
   </header>
   <section class="strip" data-module="reader" data-strip="{s['id']}" aria-label="{e(s['title'])}">
@@ -197,11 +197,28 @@ def reader(i, s, serie=False):
       <a class="chapters__card" href="{prev_['id']}.html"><span class="eyebrow">‹ Précédente</span><b class="hand">{e(prev_['title'])}</b></a>
       <a class="chapters__card" href="{next_['id']}.html"><span class="eyebrow">Suivante ›</span><b class="hand">{e(next_['title'])}</b></a>
     </nav>
-    <a class="pill pill--wide" href="../index.html#{'dessins' if serie else 'bd'}">{'Tous les dessins' if serie else 'Toutes les bandes'} ›</a>
+    <a class="pill pill--wide" href="{'../index.html#dessins' if serie else '../bandes.html'}">{'Tous les dessins' if serie else 'Toutes les bandes'} ›</a>
   </section>
 </main>
 """ + foot(base="../")
 
+def bandes():
+    cards = "".join(f"""
+    <a class="bcard" href="{s['url']}" data-cursor="lire" data-module="reveal" data-reveal>
+      <span class="bcard__paper"><img src="{M['images'][s['cover']]['src'] if s.get('cover') else s['first']['src']}" alt="{e(s['title'])}, couverture" loading="lazy"></span>
+      <span class="bcard__text"><b class="hand">{e(s['title'])}</b><span class="eyebrow">Bande dessinée · {e(s['year'])}</span></span>
+    </a>""" for s in STRIPS)
+    return head(f"Bandes dessinées — {NAME}") + f"""
+<main data-page="bandes" data-module="theme" data-plate="#f3efe6" data-dark="0">
+  <section class="bandes container">
+    <div class="head"><h1 class="hand">Bandes dessinées</h1><p class="sub">{len(STRIPS)} bandes à lire en faisant défiler.</p></div>
+    <div class="bgrid">{cards}
+    </div>
+  </section>
+</main>
+""" + foot()
+
+(ROOT / "bandes.html").write_text(bandes())
 (ROOT / "index.html").write_text(home())
 for i, s in enumerate(STRIPS):
     (ROOT / "bd" / f"{s['id']}.html").write_text(reader(i, s))
