@@ -140,7 +140,6 @@ def home():
     </div>
     <div class="hero__text">
       <h1 class="hero__title hand">{e(NAME)}</h1>
-      <p class="sub">{e(TAGLINE)} {e(CITY)}.</p>
       <a class="link" href="bandes.html">Lire les bandes <i>›</i></a>
     </div>
   </section>
@@ -151,7 +150,6 @@ def home():
   <section id="dessins" class="section container" data-module="theme" data-plate="#f3efe6" data-dark="0">
     <div class="head" data-module="reveal" data-reveal>
       <h2 class="hand">Dessins</h2>
-      <p class="sub">Carnets, affiches, essais.</p>
     </div>
     <div class="grid cascade" data-module="cascade">{cards}
     </div>
@@ -211,7 +209,7 @@ def bandes():
     return head(f"Bandes dessinées — {NAME}") + f"""
 <main data-page="bandes" data-module="theme" data-plate="#f3efe6" data-dark="0">
   <section class="bandes container">
-    <div class="head"><h1 class="hand">Bandes dessinées</h1><p class="sub">{len(STRIPS)} bandes à lire en faisant défiler.</p></div>
+    <div class="head"><h1 class="hand">Bandes dessinées</h1></div>
     <div class="bgrid">{cards}
     </div>
   </section>
