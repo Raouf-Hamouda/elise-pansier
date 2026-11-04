@@ -16,7 +16,7 @@
   --font-hand:"Sharpie","Permanent Marker",cursive;--font-marker:"Rock Salt","Permanent Marker",cursive;
   --font-text:"Apfel Grotezk",-apple-system,"Helvetica Neue",system-ui,sans-serif;
   /* Apple-style scale: eyebrow 12-14 / body 17-19 / sub 21-28 / title 40-80 */
-  --fs-eyebrow:clamp(12px,.85vw,14px);--fs-body:clamp(16px,1.05vw,19px);--fs-sub:clamp(19px,1.6vw,28px);
+  --fs-eyebrow:clamp(11px,.75vw,12px);--fs-body:clamp(16px,1.05vw,19px);--fs-sub:clamp(19px,1.6vw,28px);
   --fs-title:clamp(2.4rem,4.6vw,4.4rem);--fs-hero:clamp(2.8rem,6vw,5.6rem);
   --container:clamp(20px,5vw,80px);--section:clamp(72px,12vh,160px);--gap:clamp(20px,3vw,40px);
   --nav-inset:18px;--nav-inset-x:clamp(18px,2.5vw,32px);
@@ -34,10 +34,10 @@ a{color:inherit;text-decoration:none}
 button{font:inherit}
 h1,h2,h3,p{margin:0}
 .hand{font-family:var(--font-hand);font-weight:700;line-height:.95;letter-spacing:0}
-.eyebrow{font-size:var(--fs-eyebrow);font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.eyebrow{font-size:var(--fs-eyebrow);font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
 .sub{font-size:var(--fs-sub);line-height:1.3;letter-spacing:-.01em;color:var(--muted);text-wrap:pretty;max-width:34ch}
-.link{display:inline-flex;align-items:center;gap:.25em;font-size:var(--fs-body);font-weight:500;color:var(--pink)}
-html.is-dark .link{color:var(--fg)}
+.link{display:inline-flex;align-items:center;gap:.3em;font-size:clamp(17px,1.3vw,21px);font-weight:500;color:var(--fg);border-bottom:2px solid currentColor;padding-bottom:2px}
+.link:hover{color:var(--pink)}
 .link i{font-style:normal;transition:transform var(--d-fast) var(--ease-out-quint)}
 .link:hover i{transform:translateX(3px)}
 .container{padding-left:var(--container);padding-right:var(--container)}
@@ -119,7 +119,8 @@ html.menu-open .nav{color:var(--paper)}
 .cover.is-on{opacity:1;pointer-events:auto}
 .cover img{height:100%;width:auto;max-width:100%;object-fit:contain;box-sizing:border-box;background:#fff;padding:clamp(12px,2vw,28px);box-shadow:0 20px 60px rgba(0,0,0,.12);transition:transform var(--d-slow) var(--ease-out-quint)}
 .cover:hover img{transform:translateY(-1%) scale(1.01)}
-.hero__text{display:grid;gap:.55em;justify-items:start}
+.hero__text{display:grid;gap:0;justify-items:start}
+.hero__text .sub{margin-top:14px}.hero__text .link{margin-top:22px}
 .hero__title{font-size:var(--fs-hero);line-height:.95;rotate:-1.2deg;transform-origin:left bottom}
 
 /* ---------- full-screen BD blocks, background switches per block (immersive projectBlock + Zagnoli plates) ---------- */
@@ -131,9 +132,9 @@ html.menu-open .nav{color:var(--paper)}
 .block__plate{position:relative;display:grid;place-items:center;justify-self:center;width:100%;max-width:640px;background:#fff;padding:clamp(10px,1.4vw,22px);box-shadow:0 24px 70px rgba(0,0,0,.18)}
 .block__plate img{width:100%;height:auto;max-height:68svh;object-fit:contain;object-position:top;transition:transform var(--d-slow) var(--ease-out-quint)}
 .block__plate:hover img{transform:scale(1.01)}
-.block__text{display:grid;gap:.55em;justify-items:start;max-width:40ch}
-.block__title{font-size:var(--fs-title);margin:.05em 0 .25em;rotate:-1deg;transform-origin:left bottom}
-.block__text .link{margin-top:.6em}
+.block__text{display:grid;gap:0;justify-items:start;max-width:40ch}
+.block__title{font-size:var(--fs-title);margin:14px 0 0;rotate:-1deg;transform-origin:left bottom}
+.block__text .link{margin-top:28px}
 
 /* ---------- drawings (illustrators: cards, cascade, multiply; bd_comics zoom) ---------- */
 .grid{columns:2;column-gap:clamp(10px,2vw,28px)}
